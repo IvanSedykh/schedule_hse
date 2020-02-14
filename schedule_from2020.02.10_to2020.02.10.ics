@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ZContent//ZapCalLib 1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART:20200210T121000
+DTEND:20200210T133000
+UID:4cf7cbd93362ff8b14f334f1d60cc0d5-student-189802@ruz.hse.ru
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-DEVEXPRESS-STATUS:FREE
+DTSTAMP:20200206T233408
+SUMMARY:Теоретическая механика (рус)
+LOCATION:410/Таллинская ул.\, д. 34
+DESCRIPTION:Теоретическая механика (рус)\nдоц. Аксенов Сергей Алексеевич \n
+ ТМ_Б2018_ПРМТ#П#Теоретическая механика#БПМ161-БПМ171-БПМ173-БПМ174-БПМ181-
+ БПМ182-БПМ183-БПМ184-БПМ185 \nЛекция \n410/Таллинская ул.\, д. 34
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20200210T134000
+DTEND:20200210T150000
+UID:bdcea47181e86b159bbd037862682a6f-student-189802@ruz.hse.ru
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-DEVEXPRESS-STATUS:FREE
+DTSTAMP:20200206T233408
+SUMMARY:Английский язык (рус)
+LOCATION:233/Таллинская ул.\, д. 34
+DESCRIPTION:Английский язык (рус)\nст.преп. Рябова Светлана Александровна \
+ nАЯ_Б2018_ПРМТ_10#С#Английский язык#БПМ185 \nПрактическое занятие \n233/Та
+ ллинская ул.\, д. 34
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20200210T151000
+DTEND:20200210T163000
+UID:5051bf5f211245fae8b1cd6c7041bac7-student-189802@ruz.hse.ru
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-DEVEXPRESS-STATUS:FREE
+DTSTAMP:20200206T233408
+SUMMARY:Теоретическая механика (рус)
+LOCATION:403/Таллинская ул.\, д. 34
+DESCRIPTION:Теоретическая механика (рус)\nассист. Захарьев Иван Юрьевич \nТ
+ М_Б2018_ПРМТ_5#Г#Теоретическая механика#БПМ173-БПМ185 \nСеминар \n403/Талл
+ инская ул.\, д. 34
+END:VEVENT
+END:VCALENDAR

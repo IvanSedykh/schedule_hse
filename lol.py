@@ -1,13 +1,16 @@
 import requests
 import datetime
+import urllib3
 
+
+urllib3.disable_warnings()
 
 base_url = 'https://ruz.hse.ru/api/schedule/'
 student_id = 189802
 
 today = datetime.datetime.today()
 delta1 = datetime.timedelta(days=4)  # to launch on thursdays
-delta2 = datetime.timedelta(days=10) # to set 1 week interval
+delta2 = datetime.timedelta(days=11) # to set 1 week interval
 
 start = (today + delta1).strftime('%Y.%m.%d')
 finish = (today + delta2).strftime('%Y.%m.%d')
