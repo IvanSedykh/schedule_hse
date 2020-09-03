@@ -1,3 +1,9 @@
+from convert import convert
+from google.auth.transport.requests import Request
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+import os.path
+import pickle
 import requests
 import datetime
 import urllib3
@@ -6,37 +12,31 @@ import urllib3
 urllib3.disable_warnings()
 
 base_url = 'https://ruz.hse.ru/api/schedule/'
-student_id = 189802
+student_id = 219426
 
 today = datetime.datetime.today()
 delta1 = datetime.timedelta(days=4)  # to launch on thursdays
-delta2 = datetime.timedelta(days=11) # to set 1 week interval
+delta2 = datetime.timedelta(days=10)  # to set 1 week interval
 
 start = (today + delta1).strftime('%Y.%m.%d')
 finish = (today + delta2).strftime('%Y.%m.%d')
 
-print(start,finish)
+print(start, finish)
 
-link = base_url + 'student/{id}.ics?start={start}&finish={finish}&lng=1'.format(id=student_id, start=start, finish=finish) 
+link = base_url + 'student/{id}.ics?start={start}&finish={finish}&lng=1'.format(
+    id=student_id, start=start, finish=finish)
 print(link)
 
 sched = requests.get(link, verify=False)
 
-file_name = './schedule_from{start}_to{finish}.ics'.format(start=start,finish=finish)
+file_name = './schedule_from{start}_to{finish}.ics'.format(
+    start=start, finish=finish)
 open(file_name, 'wb').write(sched.content)
 
 
-import datetime
-import pickle
-import os.path
-from googleapiclient.discovery import build
-from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import Request
-
-from convert import convert
-
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/calendar']
+
 
 def main():
     """Shows basic usage of the Google Calendar API.
@@ -61,14 +61,13 @@ def main():
         with open('token.pickle', 'wb') as token:
             pickle.dump(creds, token)
 
-
     service = build('calendar', 'v3', credentials=creds)
 
     events = convert(fname=file_name)
 
     for event in events:
-    	lect = service.events().insert(calendarId='primary', body=event).execute()
-    	print('Event created: %s' % (lect.get('htmlLink')))
+        lect = service.events().insert(calendarId='primary', body=event).execute()
+        print('Event created: %s' % (lect.get('htmlLink')))
 
 
 if __name__ == '__main__':
