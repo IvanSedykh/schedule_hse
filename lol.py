@@ -64,9 +64,10 @@ def main():
     service = build('calendar', 'v3', credentials=creds)
 
     events = convert(fname=file_name)
+    cal_ID = 'pfpnvfml64gehhn8sn34bacfno@group.calendar.google.com'
 
     for event in events:
-        lect = service.events().insert(calendarId='primary', body=event).execute()
+        lect = service.events().insert(calendarId=cal_ID, body=event).execute()
         print('Event created: %s' % (lect.get('htmlLink')))
 
 
